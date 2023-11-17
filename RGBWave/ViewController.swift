@@ -15,10 +15,11 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizingSliders()
-        presentView.layer.cornerRadius = 10
         
+        customizingSliders()
         sliderProgressInLabel()
+        
+        presentView.layer.cornerRadius = 10
     }
     
     @IBAction func slidersRGBAction() {
