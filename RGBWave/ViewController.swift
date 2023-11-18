@@ -33,10 +33,6 @@ final class ViewController: UIViewController {
         )
     }
     
-    private func roundFloat(_ value: Float) -> String {
-        String(format:"%.02f", value)
-    }
-    
     private func sliderProgressInLabel() {
         progressLabels[0].text = roundFloat(colorRGBSliders[0].value)
         progressLabels[1].text = roundFloat(colorRGBSliders[1].value)
@@ -54,3 +50,8 @@ final class ViewController: UIViewController {
     }
 }
 
+extension ViewController {
+    private func roundFloat(_ value: Float) -> String {
+        String(format:"%.02f", value)
+    }
+}
