@@ -34,9 +34,9 @@ final class ViewController: UIViewController {
     }
     
     private func sliderProgressInLabel() {
-        progressLabels[0].text = roundFloat(colorRGBSliders[0].value)
-        progressLabels[1].text = roundFloat(colorRGBSliders[1].value)
-        progressLabels[2].text = roundFloat(colorRGBSliders[2].value)
+        progressLabels.enumerated().forEach { (index, _) in
+            progressLabels[index].text = roundFloat(colorRGBSliders[index].value)
+        }
     }
     
     private func customizingSliders() {
@@ -44,9 +44,20 @@ final class ViewController: UIViewController {
         colorRGBSliders.forEach { $0.maximumValue = 1 }
         colorRGBSliders.forEach { $0.value = 0 }
         
-        colorRGBSliders[0].minimumTrackTintColor = .systemRed
-        colorRGBSliders[1].minimumTrackTintColor = .systemGreen
-        colorRGBSliders[2].minimumTrackTintColor = .systemBlue
+        colorRGBSliders.enumerated().forEach { (index, value) in
+            switch index {
+            case 0:
+                value.minimumTrackTintColor = .systemRed
+            case 1:
+                value.minimumTrackTintColor = .systemGreen
+            default:
+                value.minimumTrackTintColor = .systemBlue
+            }
+        }
+        
+//        colorRGBSliders[0].minimumTrackTintColor = .systemRed
+//        colorRGBSliders[1].minimumTrackTintColor = .systemGreen
+//        colorRGBSliders[2].minimumTrackTintColor = .systemBlue
     }
 }
 
