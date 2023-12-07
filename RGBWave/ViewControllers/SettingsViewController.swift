@@ -23,26 +23,15 @@ final class SettingsViewController: UIViewController {
     
     // MARK: Properties
     var backgraund: Backgraund!
-    
-    var presentView: UIColor?
-    
     weak var delegate: SettingsViewControllerDelegate?
+    var presentView: UIColor?
     
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorView.layer.cornerRadius = 15
         setColor()
-        
-        redSlider.value = Float(backgraund.red)
-        greenSlider.value = Float(backgraund.green)
-        blueSlider.value = Float(backgraund.blue)
-        colorView.backgroundColor = presentView
-        
-        redLabel.text = string(from: redSlider)
-        greenLabel.text = string(from: greenSlider)
-        blueLabel.text = string(from: blueSlider)
+        updateUI()
     }
     
     // MARK: IBAction
@@ -53,7 +42,6 @@ final class SettingsViewController: UIViewController {
             blue: blueSlider.value.cgFloat()
         )        
     }
-    
     
     @IBAction func sliderAction(_ sender: UISlider) {
         setColor()
@@ -86,6 +74,21 @@ final class SettingsViewController: UIViewController {
 extension Float {
     func cgFloat() -> CGFloat {
         CGFloat(self)
+    }
+}
+
+extension SettingsViewController {
+    private func updateUI() {
+        colorView.layer.cornerRadius = 15
+        
+        redSlider.value = Float(backgraund.red)
+        greenSlider.value = Float(backgraund.green)
+        blueSlider.value = Float(backgraund.blue)
+        colorView.backgroundColor = presentView
+        
+        redLabel.text = string(from: redSlider)
+        greenLabel.text = string(from: greenSlider)
+        blueLabel.text = string(from: blueSlider)
     }
 }
 

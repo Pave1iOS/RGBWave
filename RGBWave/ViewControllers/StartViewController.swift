@@ -14,7 +14,6 @@ protocol SettingsViewControllerDelegate: AnyObject {
 final class StartViewController: UIViewController {
 
     private var backgraund = Backgraund()
-    
     weak var delegate: SettingsViewControllerDelegate?
     
     override func viewDidLoad() {
