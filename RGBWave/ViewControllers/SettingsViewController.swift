@@ -6,7 +6,6 @@
 //
 
 
-
 import UIKit
 
 final class SettingsViewController: UIViewController {
@@ -21,6 +20,8 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    weak var delegate: SettingsViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +31,19 @@ final class SettingsViewController: UIViewController {
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
         blueLabel.text = string(from: blueSlider)
+        
+        
     }
+    
+    @IBAction func doneButtonPressed() {
+        delegate?.setBackgraund(
+            red: redSlider.value.cgFloat(),
+            green: greenSlider.value.cgFloat(),
+            blue: blueSlider.value.cgFloat()
+        )
+        dismiss(animated: true)
+    }
+    
     
     @IBAction func sliderAction(_ sender: UISlider) {
         setColor()
