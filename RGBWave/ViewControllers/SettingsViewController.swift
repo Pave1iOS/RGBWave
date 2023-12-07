@@ -35,9 +35,9 @@ final class SettingsViewController: UIViewController {
         colorView.layer.cornerRadius = 15
         setColor()
         
-        redSlider.value = Float(backgraund.red)
-        greenSlider.value = Float(backgraund.green)
-        blueSlider.value = Float(backgraund.blue)
+        redSlider.value = Float(backgraund.red ?? 0)
+        greenSlider.value = Float(backgraund.green ?? 0)
+        blueSlider.value = Float(backgraund.blue ?? 0)
         colorView.backgroundColor = presentView
         
         redLabel.text = string(from: redSlider)
@@ -51,9 +51,7 @@ final class SettingsViewController: UIViewController {
             red: redSlider.value.cgFloat(),
             green: greenSlider.value.cgFloat(),
             blue: blueSlider.value.cgFloat()
-        )
-        
-        dismiss(animated: true)
+        )        
     }
     
     

@@ -14,17 +14,14 @@ protocol SettingsViewControllerDelegate: AnyObject {
 final class StartViewController: UIViewController {
 
     var backgraund = Backgraund()
+    
     weak var delegate: SettingsViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(
-            red: backgraund.red,
-            green: backgraund.green,
-            blue: backgraund.blue,
-            alpha: 1
-        )
+        updateUI()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,6 +33,13 @@ final class StartViewController: UIViewController {
         settingsVC?.delegate = self
     }
     
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        let settingsVC = segue.source as? SettingsViewController
+        
+        backgraund.red = settingsVC?.redSlider.value.cgFloat()
+        backgraund.green = settingsVC?.greenSlider.value.cgFloat()
+        backgraund.blue = settingsVC?.blueSlider.value.cgFloat()
+    }
 }
 
 // MARK: SettingsViewControllerDelegate
@@ -47,5 +51,18 @@ extension StartViewController: SettingsViewControllerDelegate {
             blue: blue,
             alpha: 1
         )
+    }
+}
+
+extension StartViewController {
+    private func updateUI() {
+        
+        view.backgroundColor = UIColor(
+            red: backgraund.red ?? 0,
+            green: backgraund.green ?? 0,
+            blue: backgraund.blue ?? 0,
+            alpha: 1
+        )
+        
     }
 }

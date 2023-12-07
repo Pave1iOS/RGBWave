@@ -147,6 +147,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="clo-6c-Yic"/>
+                                    <segue destination="wpe-Mj-zqL" kind="unwind" unwindAction="unwindWithSegue:" id="u5R-BP-9Ce"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -174,6 +175,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="wpe-Mj-zqL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="986" y="19"/>
         </scene>

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Backgraund {
-    var red: CGFloat = 0.2
-    var green: CGFloat = 0.5
-    var blue: CGFloat = 0.7
+    var red: CGFloat?
+    var green: CGFloat?
+    var blue: CGFloat?
 }
