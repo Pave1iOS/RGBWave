@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="g7Y-kG-L8k">
             <objects>
-                <viewController id="V2T-r9-gO6" sceneMemberID="viewController">
+                <viewController id="V2T-r9-gO6" customClass="StartViewController" customModule="RGBWave" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8yW-tq-4Sj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,12 +139,21 @@
                                     <constraint firstAttribute="height" constant="140" id="oES-XB-pld"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70Q-nF-fJn">
+                                <rect key="frame" x="127" y="462.5" width="66" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
                             <constraint firstItem="VQl-nR-b2x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1rO-qC-Rfd"/>
+                            <constraint firstItem="70Q-nF-fJn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8sj-vh-kbp"/>
                             <constraint firstItem="VQl-nR-b2x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FN1-sQ-xdR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="70Q-nF-fJn" secondAttribute="bottom" multiplier="16:14" id="J0Q-8B-pXA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7NZ-M9-A4y" secondAttribute="trailing" constant="16" id="P9O-hP-qNZ"/>
                             <constraint firstItem="7NZ-M9-A4y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iP8-f0-KzN"/>
                             <constraint firstItem="7NZ-M9-A4y" firstAttribute="top" secondItem="VQl-nR-b2x" secondAttribute="bottom" constant="35" id="qgt-Iq-4sY"/>
@@ -171,7 +180,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WhF-2q-t03" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0eR-eh-i74">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
