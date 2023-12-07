@@ -56,15 +56,39 @@
 		465ACAD92B07850D00CD92C8 /* RGBWave */ = {
 			isa = PBXGroup;
 			children = (
-				465ACADA2B07850D00CD92C8 /* AppDelegate.swift */,
-				465ACADC2B07850D00CD92C8 /* SceneDelegate.swift */,
-				465ACADE2B07850D00CD92C8 /* ViewController.swift */,
-				465ACAE02B07850D00CD92C8 /* Main.storyboard */,
+				46A201A62B21DB570019729F /* ViewControllers */,
+				46A201A72B21DB690019729F /* Storyboards */,
+				46A201A82B21DB870019729F /* App */,
 				465ACAE32B07851200CD92C8 /* Assets.xcassets */,
-				465ACAE52B07851200CD92C8 /* LaunchScreen.storyboard */,
-				465ACAE82B07851200CD92C8 /* Info.plist */,
 			);
 			path = RGBWave;
+			sourceTree = "<group>";
+		};
+		46A201A62B21DB570019729F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				465ACADE2B07850D00CD92C8 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		46A201A72B21DB690019729F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				465ACAE02B07850D00CD92C8 /* Main.storyboard */,
+				465ACAE52B07851200CD92C8 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		46A201A82B21DB870019729F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				465ACADA2B07850D00CD92C8 /* AppDelegate.swift */,
+				465ACADC2B07850D00CD92C8 /* SceneDelegate.swift */,
+				465ACAE82B07851200CD92C8 /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +318,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F4DM4RJXGM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RGBWave/Info.plist;
+				INFOPLIST_FILE = RGBWave/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F4DM4RJXGM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RGBWave/Info.plist;
+				INFOPLIST_FILE = RGBWave/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
