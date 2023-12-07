@@ -22,12 +22,11 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     // MARK: Properties
-    weak var delegate: SettingsViewControllerDelegate?
+    var backgraund: Backgraund!
     
-    var redColorSlider: Float!
-    var greenColorSlider: Float!
-    var blueColorSlider: Float!
     var presentView: UIColor?
+    
+    weak var delegate: SettingsViewControllerDelegate?
     
     // MARK: viewDidLoad
     override func viewDidLoad() {
@@ -36,9 +35,9 @@ final class SettingsViewController: UIViewController {
         colorView.layer.cornerRadius = 15
         setColor()
         
-        redSlider.value = redColorSlider
-        greenSlider.value = greenColorSlider
-        blueSlider.value = blueColorSlider
+        redSlider.value = Float(backgraund.red)
+        greenSlider.value = Float(backgraund.green)
+        blueSlider.value = Float(backgraund.blue)
         colorView.backgroundColor = presentView
         
         redLabel.text = string(from: redSlider)
