@@ -8,13 +8,13 @@
 import UIKit
 
 protocol SettingsViewControllerDelegate: AnyObject {
-    func setBackgraund(red: CGFloat, green: CGFloat, blue: CGFloat)
+    func setBackgraund(colorRed: CGFloat, green: CGFloat, blue: CGFloat)
 }
 
 final class StartViewController: UIViewController {
 
     weak var delegate: SettingsViewControllerDelegate?
-    private var backgraund = Backgraund()
+    private var backgraund = ColorRGB()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,10 @@ final class StartViewController: UIViewController {
 }
 
 // MARK: SettingsViewControllerDelegate
-extension StartViewController: SettingsViewControllerDelegate {
-    func setBackgraund(red: CGFloat, green: CGFloat, blue: CGFloat) {
+extension StartViewController: SettingsViewControllerDelegate {    
+    func setBackgraund(colorRed: CGFloat, green: CGFloat, blue: CGFloat) {
         view.backgroundColor = UIColor(
-            red: red,
+            red: colorRed,
             green: green,
             blue: blue,
             alpha: 1

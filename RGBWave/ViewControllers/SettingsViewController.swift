@@ -22,7 +22,7 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     // MARK: Properties
-    var backgraund: Backgraund!
+    var backgraund: ColorRGB!
     weak var delegate: SettingsViewControllerDelegate?
     var presentView: UIColor?
     
@@ -37,7 +37,7 @@ final class SettingsViewController: UIViewController {
     // MARK: IBAction
     @IBAction func doneButtonPressed() {
         delegate?.setBackgraund(
-            red: redSlider.value.cgFloat(),
+            colorRed: redSlider.value.cgFloat(),
             green: greenSlider.value.cgFloat(),
             blue: blueSlider.value.cgFloat()
         )        
