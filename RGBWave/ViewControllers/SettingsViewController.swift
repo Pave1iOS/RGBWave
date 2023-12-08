@@ -60,20 +60,6 @@ final class SettingsViewController: UIViewController {
             blueLabel.text = string(from: blueSlider)
         }
     }
-    
-    // MARK: Private func
-    private func setColor() {
-        colorView.backgroundColor = UIColor(
-            red: redSlider.value.cgFloat(),
-            green: greenSlider.value.cgFloat(),
-            blue: blueSlider.value.cgFloat(),
-            alpha: 1
-        )
-    }
-    
-    private func string(from slider: UISlider) -> String {
-        String(format: "%.2f", slider.value)
-    }
 }
 
 extension Float {
@@ -108,7 +94,6 @@ extension SettingsViewController {
                 for: .valueChanged
             )
         }
-        
 }
         
     @objc private func valueChanged() {
@@ -116,9 +101,41 @@ extension SettingsViewController {
         greenTextField.text = string(from: greenSlider)
         blueTextField.text = string(from: blueSlider)
     }
+    
+    private func setColor() {
+        colorView.backgroundColor = UIColor(
+            red: redSlider.value.cgFloat(),
+            green: greenSlider.value.cgFloat(),
+            blue: blueSlider.value.cgFloat(),
+            alpha: 1
+        )
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
 }
 
+// MARK: UITextFieldDelegate
 extension SettingsViewController: UITextFieldDelegate {
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let floatTF = Float(textField.text!) else { return }
+        
+        if textField == redTextField {
+            redSlider.setValue(floatTF, animated: true)
+            redLabel.text = string(from: redSlider)
+        } else if textField == greenTextField {
+            greenSlider.setValue(floatTF, animated: true)
+            greenLabel.text = string(from: greenSlider)
+        } else {
+            blueSlider.setValue(floatTF, animated: true)
+            blueLabel.text = string(from: blueSlider)
+        }
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
 
