@@ -85,7 +85,9 @@ extension SettingsViewController {
         greenTextField.text = string(from: greenSlider)
         blueTextField.text = string(from: blueSlider)
         
-        redTextField.delegate = self
+        for textField in [redTextField, greenTextField, blueTextField] {
+            textField?.delegate = self
+        }
         
         for slider in [redSlider, greenSlider, blueSlider] {
             slider?.addTarget(
@@ -125,16 +127,20 @@ extension SettingsViewController: UITextFieldDelegate {
         if textField == redTextField {
             redSlider.setValue(floatTF, animated: true)
             redLabel.text = string(from: redSlider)
+            setColor()
         } else if textField == greenTextField {
             greenSlider.setValue(floatTF, animated: true)
             greenLabel.text = string(from: greenSlider)
+            setColor()
         } else {
             blueSlider.setValue(floatTF, animated: true)
             blueLabel.text = string(from: blueSlider)
+            setColor()
         }
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         textField.resignFirstResponder()
     }
 }
