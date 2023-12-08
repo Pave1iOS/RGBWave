@@ -68,8 +68,8 @@ extension Float {
     }
 }
 
-extension SettingsViewController {
-    private func updateUI() {
+private extension SettingsViewController {
+    func updateUI() {
         colorView.layer.cornerRadius = 15
         
         redSlider.value = Float(backgraund.red)
@@ -94,9 +94,9 @@ extension SettingsViewController {
                 for: .valueChanged
             )
         }
-}
+    }
         
-    @objc private func valueChanged() {
+    @objc func valueChanged() {
         redTextField.text = string(from: redSlider)
         greenTextField.text = string(from: greenSlider)
         blueTextField.text = string(from: blueSlider)
@@ -108,7 +108,7 @@ extension SettingsViewController {
         blueLabel.text = string(from: blueSlider)
     }
     
-    private func setColor() {
+    func setColor() {
         colorView.backgroundColor = UIColor(
             red: redSlider.value.cgFloat(),
             green: greenSlider.value.cgFloat(),
@@ -117,16 +117,54 @@ extension SettingsViewController {
         )
     }
     
-    private func string(from slider: UISlider) -> String {
+    func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+    
+    func showAlert(
+        withTitle title: String,
+        andMessage message: String,
+        complition: (() -> Void)? = nil
+    ) {
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        present(alert, animated: true)
+            
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            complition?()
+        }
+            alert.addAction(okAction)
+    }
 }
+
+
 
 // MARK: UITextFieldDelegate
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        guard let floatTF = Float(textField.text!) else { return }
+        guard let floatTF = Float(textField.text!) else {
+            
+            showAlert(
+                withTitle: "Wrong format!",
+                andMessage: "please enter the correct value",
+                complition: {
+                    self.valueChanged()
+                }
+            )
+            return
+        }
+        
+        if floatTF > 1 {
+            
+            showAlert(
+                withTitle: "Wrong format!",
+                andMessage: "please enter the correct value",
+                complition: {
+                    self.valueChanged()
+                }
+            )
+        }
         
         if textField == redTextField {
             redSlider.setValue(floatTF, animated: true)
@@ -140,8 +178,8 @@ extension SettingsViewController: UITextFieldDelegate {
         setColor()
         
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         textField.resignFirstResponder()
     }
 }
