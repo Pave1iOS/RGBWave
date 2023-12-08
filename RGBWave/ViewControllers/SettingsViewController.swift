@@ -25,7 +25,6 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
-    
     // MARK: Properties
     var backgraund: ColorRGB!
     weak var delegate: SettingsViewControllerDelegate?
@@ -37,6 +36,12 @@ final class SettingsViewController: UIViewController {
         
         setColor()
         updateUI()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+
+        view.endEditing(true)
     }
     
     // MARK: IBAction
@@ -136,8 +141,6 @@ private extension SettingsViewController {
             alert.addAction(okAction)
     }
 }
-
-
 
 // MARK: UITextFieldDelegate
 extension SettingsViewController: UITextFieldDelegate {
