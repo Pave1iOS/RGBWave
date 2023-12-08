@@ -21,6 +21,11 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    @IBOutlet var redTextField: UITextField!
+    @IBOutlet var greenTextField: UITextField!
+    @IBOutlet var blueTextField: UITextField!
+    
+    
     // MARK: Properties
     var backgraund: ColorRGB!
     weak var delegate: SettingsViewControllerDelegate?
@@ -89,7 +94,31 @@ extension SettingsViewController {
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
         blueLabel.text = string(from: blueSlider)
+        
+        redTextField.text = string(from: redSlider)
+        greenTextField.text = string(from: greenSlider)
+        blueTextField.text = string(from: blueSlider)
+        
+        redTextField.delegate = self
+        
+        for slider in [redSlider, greenSlider, blueSlider] {
+            slider?.addTarget(
+                self,
+                action: #selector(SettingsViewController.valueChanged),
+                for: .valueChanged
+            )
+        }
+        
+}
+        
+    @objc private func valueChanged() {
+        redTextField.text = string(from: redSlider)
+        greenTextField.text = string(from: greenSlider)
+        blueTextField.text = string(from: blueSlider)
     }
 }
 
+extension SettingsViewController: UITextFieldDelegate {
+    
+}
 
