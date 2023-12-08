@@ -77,9 +77,7 @@ extension SettingsViewController {
         blueSlider.value = Float(backgraund.blue)
         colorView.backgroundColor = presentView
         
-        redLabel.text = string(from: redSlider)
-        greenLabel.text = string(from: greenSlider)
-        blueLabel.text = string(from: blueSlider)
+        updateLabelsText()
         
         redTextField.text = string(from: redSlider)
         greenTextField.text = string(from: greenSlider)
@@ -104,6 +102,12 @@ extension SettingsViewController {
         blueTextField.text = string(from: blueSlider)
     }
     
+    func updateLabelsText() {
+        redLabel.text = string(from: redSlider)
+        greenLabel.text = string(from: greenSlider)
+        blueLabel.text = string(from: blueSlider)
+    }
+    
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: redSlider.value.cgFloat(),
@@ -126,17 +130,14 @@ extension SettingsViewController: UITextFieldDelegate {
         
         if textField == redTextField {
             redSlider.setValue(floatTF, animated: true)
-            redLabel.text = string(from: redSlider)
-            setColor()
         } else if textField == greenTextField {
             greenSlider.setValue(floatTF, animated: true)
-            greenLabel.text = string(from: greenSlider)
-            setColor()
         } else {
             blueSlider.setValue(floatTF, animated: true)
-            blueLabel.text = string(from: blueSlider)
-            setColor()
         }
+        
+        updateLabelsText()
+        setColor()
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
