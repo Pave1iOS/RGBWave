@@ -37,7 +37,7 @@ final class SettingsViewController: UIViewController {
         setColor()
         updateUI()
     }
-    
+    // MARK: Override func
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 

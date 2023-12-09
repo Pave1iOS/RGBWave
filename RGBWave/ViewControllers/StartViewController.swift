@@ -42,7 +42,8 @@ final class StartViewController: UIViewController {
 }
 
 // MARK: SettingsViewControllerDelegate
-extension StartViewController: SettingsViewControllerDelegate {    
+extension StartViewController: SettingsViewControllerDelegate {   
+    
     func setBackgraund(colorRed: CGFloat, green: CGFloat, blue: CGFloat) {
         view.backgroundColor = UIColor(
             red: colorRed,
@@ -54,14 +55,13 @@ extension StartViewController: SettingsViewControllerDelegate {
 }
 
 extension StartViewController {
+    
     private func updateUI() {
-        
         view.backgroundColor = UIColor(
             red: backgraund.red,
             green: backgraund.green,
             blue: backgraund.blue,
             alpha: 1
         )
-        
     }
 }
