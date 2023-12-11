@@ -14,7 +14,6 @@
 		465ACAE42B07851200CD92C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465ACAE32B07851200CD92C8 /* Assets.xcassets */; };
 		465ACAE72B07851200CD92C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465ACAE52B07851200CD92C8 /* LaunchScreen.storyboard */; };
 		46A201B22B220EF30019729F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A201B12B220EF30019729F /* StartViewController.swift */; };
-		46A201B42B2239C00019729F /* ColorRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A201B32B2239C00019729F /* ColorRGB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		465ACAE62B07851200CD92C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		465ACAE82B07851200CD92C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A201B12B220EF30019729F /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		46A201B32B2239C00019729F /* ColorRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRGB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				46A201A62B21DB570019729F /* ViewControllers */,
-				46A201B52B223AA60019729F /* Models */,
 				46A201A72B21DB690019729F /* Storyboards */,
 				46A201A82B21DB870019729F /* App */,
 				465ACAE32B07851200CD92C8 /* Assets.xcassets */,
@@ -95,14 +92,6 @@
 				465ACAE82B07851200CD92C8 /* Info.plist */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		46A201B52B223AA60019729F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				46A201B32B2239C00019729F /* ColorRGB.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +168,6 @@
 				465ACADF2B07850D00CD92C8 /* SettingsViewController.swift in Sources */,
 				46A201B22B220EF30019729F /* StartViewController.swift in Sources */,
 				465ACADB2B07850D00CD92C8 /* AppDelegate.swift in Sources */,
-				46A201B42B2239C00019729F /* ColorRGB.swift in Sources */,
 				465ACADD2B07850D00CD92C8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
